@@ -40,7 +40,7 @@ From Customer
 Where Country = 'Brazil'
 
 -- Provide a query that includes the track name with each invoice line item and sort by track name
-SELECT InvoiceLine.*, Track.Name AS TName
+SELECT Track.Name AS TName, InvoiceLine.*
 FROM InvoiceLine
 JOIN Track on Track.TrackId = InvoiceLine.TrackId
 
