@@ -1,0 +1,52 @@
+-- Write a query to retrieve First Name, Last Name and email from the Employee table
+SELECT FirstName, LastName, Email
+FROM Employee
+
+-- Write a query to retrieve all records in the Artists table
+SELECT Name
+FROM Artist
+
+-- Write a query to retrieve all Employees who are a manager (i.e. manager is in their job title)
+SELECT FirstName, LastName
+FROM Employee
+WHERE Title LIKE '%Manager%'
+
+-- Write a query to retrieve the largest and smallest Invoice
+SELECT MAX(Total), Min(Total)
+FROM Invoice
+
+-- Write a query to retrieve all invoices for Germany with the following columns: BillingAddress,
+-- BillingCity, BillingCity, BillingPostalCode and Invoice Total
+
+SELECT BillingAddress,BillingCity, BillingCity, BillingPostalCode, Total
+FROM Invoice
+WHERE BillingCountry = 'Germany'
+
+-- Write a query to retrieve all invoices where the total is between $15 and $25 with the following
+-- columns: BillingAddress, BillingCity, BillingCity, BillingPostalCode and Invoice Total
+
+SELECT BillingAddress, BillingCity, BillingCity, BillingPostalCode, Total
+From Invoice
+Where Total > 15 and Total < 25
+
+-- Provide a query showing a unique list of billing countries from the Invoice table
+SELECT DISTINCT BillingCountry
+From Invoice
+
+-- Provide a query showing Customers (just their full names, customer ID and country) who are not
+-- in the US.
+SELECT FirstName, LastName, CustomerID, Country
+From Customer
+Where Country != 'USA'
+
+-- Provide a query only showing the Customers from Brazil.
+SELECT *
+From Customer
+Where Country = 'Brazil'
+
+-- Provide a query that includes the track name with each invoice line item and sort by track name
+SELECT Track.Name, InvoiceLine.*
+From Track
+
+
+
