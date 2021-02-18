@@ -3,7 +3,7 @@ SELECT FirstName, LastName, Email
 FROM Employee
 
 -- Write a query to retrieve all records in the Artists table
-SELECT Name
+SELECT *
 FROM Artist
 
 -- Write a query to retrieve all Employees who are a manager (i.e. manager is in their job title)
@@ -15,16 +15,12 @@ WHERE Title LIKE '%Manager%'
 SELECT MAX(Total), Min(Total)
 FROM Invoice
 
--- Write a query to retrieve all invoices for Germany with the following columns: BillingAddress,
--- BillingCity, BillingCity, BillingPostalCode and Invoice Total
-
+-- Write a query to retrieve all invoices for Germany
 SELECT BillingAddress,BillingCity, BillingCity, BillingPostalCode, Total
 FROM Invoice
 WHERE BillingCountry = 'Germany'
 
--- Write a query to retrieve all invoices where the total is between $15 and $25 with the following
--- columns: BillingAddress, BillingCity, BillingCity, BillingPostalCode and Invoice Total
-
+-- Write a query to retrieve all invoices where the total is between $15 and $25
 SELECT BillingAddress, BillingCity, BillingCity, BillingPostalCode, Total
 From Invoice
 Where Total > 15 and Total < 25
@@ -33,8 +29,7 @@ Where Total > 15 and Total < 25
 SELECT DISTINCT BillingCountry
 From Invoice
 
--- Provide a query showing Customers (just their full names, customer ID and country) who are not
--- in the US.
+-- Provide a query showing Customers (just their full names, customer ID and country) who are not in the US
 SELECT FirstName, LastName, CustomerID, Country
 From Customer
 Where Country != 'USA'
@@ -45,8 +40,8 @@ From Customer
 Where Country = 'Brazil'
 
 -- Provide a query that includes the track name with each invoice line item and sort by track name
-SELECT Track.Name, InvoiceLine.*
-From Track
-
+SELECT InvoiceLine.*, Track.Name AS TName
+FROM InvoiceLine
+JOIN Track on Track.TrackId = InvoiceLine.TrackId
 
 
