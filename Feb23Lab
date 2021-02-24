@@ -1,0 +1,38 @@
+-- Number One
+SELECT MAX(Total)
+FROM Invoice;
+
+-- Number Two
+SELECT Total as maxTotal
+From Invoice
+ORDER BY Total Desc
+Limit 1;
+
+-- Number Three
+SELECT MediaType.Name,COUNT(*)
+FROM Track,MediaType
+WHERE Track.MediaTypeId = MediaType.MediaTypeId
+GROUP BY MediaType.Name;
+
+-- Number Four
+SELECT MediaType.Name,COUNT(*)
+FROM Track,MediaType
+WHERE Track.MediaTypeId = MediaType.MediaTypeId
+GROUP BY MediaType.Name
+ORDER BY COUNT(*) DESC;
+
+-- Number Five
+SELECT MediaType.Name,COUNT(*)
+FROM Track,MediaType
+WHERE Track.MediaTypeId = MediaType.MediaTypeId
+GROUP BY MediaType.Name
+HAVING COUNT(*) > 200
+ORDER BY COUNT(*) DESC;
+
+-- Number Six
+SELECT COUNT (*), COUNT(DISTINCT Artist.name)
+FROM Track, Artist, Album
+WHERE Artist.ArtistId = Album.ArtistId AND Track.AlbumId = Album.AlbumId AND Artist.name LIKE 'A%';
+
+-- Number Seven
+Will go over in class 
