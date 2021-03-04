@@ -1,4 +1,5 @@
-BEGIN TRANSACTION;
+-- Assignment 2: By Alex Rigl
+
 -- Question One
 CREATE TABLE Player (
     pID       INT              NOT NULL,
