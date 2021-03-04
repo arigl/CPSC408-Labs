@@ -47,3 +47,32 @@ DROP TABLE Player;
 SELECT AVG(Total)
 FROM Invoice
 WHERE BillingCountry = 'Brazil';
+
+-- Number Nine
+SELECT AVG(Total), BillingCity
+FROM Invoice
+WHERE BillingCountry = 'Brazil'
+GROUP BY BillingCity;
+
+-- Number Ten
+SELECT Album.Title AS Title, COUNT(Track.AlbumId) AS Tracks
+FROM Album, Track
+WHERE Album.AlbumId = Track.AlbumId
+GROUP BY Album.Title
+HAVING Tracks > 20;
+
+-- Number Eleven
+SELECT COUNT(*)
+FROM Invoice
+WHERE InvoiceDate BETWEEN '2010-01-01' AND '2010-12-31';
+
+-- Number Twelve
+SELECT BillingCountry AS Country, COUNT(DISTINCT(BillingCity)) AS Count
+FROM Invoice
+GROUP BY BillingCountry
+ORDER BY Count DESC;
+
+-- Number Thirteen
+SELECT Album.Title AS aName, Track.Name tName, MediaType.Name AS mType
+FROM Album, Track, MediaType
+WHERE Album.AlbumId = Track.AlbumId AND Track.MediaTypeId = MediaType.MediaTypeId;
