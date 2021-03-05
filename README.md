@@ -1,6 +1,6 @@
 # CPSC408-Assignments
 
-<h3> Assignment 1 </h3>
+<h2> Assignment 1 </h2>
 Name: Alex Rigl
 
 ID: 2300146
