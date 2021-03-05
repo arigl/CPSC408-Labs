@@ -10,7 +10,7 @@ CREATE TABLE Player (
 
 -- Question Two
 ALTER TABLE Player
-ADD age VARCHAT (20);
+ADD age INT;
 
 -- Question Three
 INSERT INTO Player (pId, name, teamName, age)
@@ -35,10 +35,7 @@ SET age = 25
 WHERE age IS NULL;
 
 -- Question Six
-SELECT COUNT(pId)
-FROM Player;
-
-SELECT AVG(pID)
+Select COUNT(*), AVG(age)
 FROM Player;
 
 -- Question Seven
@@ -77,3 +74,12 @@ ORDER BY Count DESC;
 SELECT Album.Title AS aName, Track.Name tName, MediaType.Name AS mType
 FROM Album, Track, MediaType
 WHERE Album.AlbumId = Track.AlbumId AND Track.MediaTypeId = MediaType.MediaTypeId;
+                                                 
+--Question 14
+SELECT COUNT(*)
+FROM Invoice, Customer, Employee 
+WHERE Employee.EmployeeId = Customer.SupportRepId
+AND Customer.CustomerId =
+      (SELECT Invoice.CustomerId
+       FROM Invoice, Employee
+       WHERE Employee.FirstName = 'Jane' AND Employee.LastName = 'Peacock');
