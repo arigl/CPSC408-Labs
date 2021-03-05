@@ -75,7 +75,7 @@ SELECT Album.Title AS aName, Track.Name tName, MediaType.Name AS mType
 FROM Album, Track, MediaType
 WHERE Album.AlbumId = Track.AlbumId AND Track.MediaTypeId = MediaType.MediaTypeId;
                                                  
---Question 14
+--Question Fourteen
 SELECT COUNT(*)
 FROM Invoice, Customer, Employee 
 WHERE Employee.EmployeeId = Customer.SupportRepId
